@@ -23,5 +23,11 @@ pipeline{
 				bat "mvn install -DskipTests"
 			}
 		}
+		stage("scan"){
+			steps{
+				echo "Start Scan"
+				bat "mvn sonar:sonar"
+			}
+		}
 	}
 }
